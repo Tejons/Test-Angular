@@ -1,0 +1,42 @@
+
+<div class="container w-50 mt-2">
+    <h1 class="text-center"> {{title}} </h1>
+    <div class="overflow-auto">
+        <div class="mt-2 overflow-auto">
+                <table class="table table-striped overflow-auto">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                      </tr>
+                    </thead>
+                    <tbody class="mb-3">
+                      <tr *ngFor="let persona of personas">
+                        <td> {{persona.first_name}} </td>
+                        <td> {{persona.last_name}} </td>
+                        <td> {{persona.email}} </td>
+                      </tr>
+                    </tbody>
+                </table>
+        </div>
+        <div class="card border-light w-50 mt-2">
+            <div class="card-body m-2">
+                <div class="text-primary">
+                    Nombre:
+                </div>
+                <form (submit)="add(nombre)">
+                    <div class="form-group">
+                        <input class="form-control" #nombre type="text" required>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary mt-4">Guardar</button>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
